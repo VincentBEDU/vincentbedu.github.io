@@ -1,75 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Vincent.Bedu | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vincent Bedu — About</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; line-height: 1.7;">
+<body>
+  <div class="container">
+    <header class="nav">
+      <a class="brand" href="index.html">VINCENT BEDU</a>
+      <nav class="menu">
+        <a class="active" href="index.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+    </header>
 
-  <header>
-    <h1>Vincent.Bedu</h1>
-    <p><strong>Data Analyst | Data Storytelling | Portfolio</strong></p>
-    <hr />
-  </header>
+    <main>
+      <h1>ABOUT</h1>
+      <p class="lead">
+        Helping organizations turn data into clarity — connecting the dots between data and impact.
+      </p>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I am a data analyst passionate about turning data into insights and
-      compelling stories. I work with real-world datasets to analyze,
-      visualize, and communicate findings clearly.
-    </p>
-  </section>
+      <section class="section">
+        <p>
+          Hello, I’m Vincent. I’m a data analyst passionate about turning messy data into insight-driven decisions.
+          I work with tools like Python, SQL, Power BI, and Excel to analyze, visualize, and communicate results clearly.
+        </p>
+        <p>
+          I enjoy building dashboards, writing clear project stories, and creating end-to-end analytics workflows
+          that teams can trust.
+        </p>
+      </section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>WHO/UNICEF JMP – Water Access Analysis</strong><br />
-        Data storytelling project using global water access indicators.
-      </li>
-      <li>
-        <strong>Sales Performance Dashboard</strong><br />
-        Interactive dashboard highlighting KPIs and trends.
-      </li>
-      <li>
-        <strong>Customer Churn Analysis</strong><br />
-        Exploratory analysis to identify key churn drivers.
-      </li>
-    </ul>
-  </section>
+      <footer class="footer">
+        <div>© <span id="year"></span> Vincent Bedu</div>
+        <div class="social">
+          <a href="https://github.com/VincentBEDU" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:youremail@example.com">Email</a>
+        </div>
+      </footer>
+    </main>
+  </div>
 
-  <section>
-    <h2>Blog</h2>
-    <p>
-      I share short articles and case studies about data analysis,
-      visualization, and storytelling.
-    </p>
-    <ul>
-      <li>Cleaning and preparing real-world datasets</li>
-      <li>How to choose the right chart for your data</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p>
-      GitHub:
-      <a href="https://github.com/VincentBEDU" target="_blank">
-        github.com/VincentBEDU
-      </a>
-    </p>
-    <p>
-      LinkedIn:
-      <a href="#" target="_blank">Add your LinkedIn link</a>
-    </p>
-  </section>
-
-  <footer>
-    <hr />
-    <p>© 2026 Vincent Bedu</p>
-  </footer>
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
