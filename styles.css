@@ -25,7 +25,9 @@ a:hover{ text-decoration: underline; }
   padding: 34px 0 70px;
 }
 
-/* Top nav */
+/* =====================
+   TOP NAVIGATION
+===================== */
 .nav{
   display: flex;
   align-items: center;
@@ -55,7 +57,9 @@ a:hover{ text-decoration: underline; }
   text-underline-offset: 4px;
 }
 
-/* Typography */
+/* =====================
+   TYPOGRAPHY
+===================== */
 h1{
   font-size: clamp(34px, 5vw, 52px);
   margin: 28px 0 10px;
@@ -68,30 +72,46 @@ h1{
   max-width: 70ch;
 }
 
-/* Sections */
+/* =====================
+   SECTIONS
+===================== */
 .section{
   margin-top: 30px;
   padding-top: 24px;
   border-top: 1px solid var(--border);
 }
 
-/*  New: data-analyst colorful About highlight */
+/* =====================
+   ABOUT HIGHLIGHT
+   (Gradient + Grid)
+===================== */
 .about-highlight{
   margin-top: 18px;
   padding: 22px 22px;
   border-radius: 16px;
 
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.14),  /* blue */
-    rgba(16, 185, 129, 0.12),  /* green */
-    rgba(168, 85, 247, 0.10)   /* purple */
-  );
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.14),  /* blue */
+      rgba(16, 185, 129, 0.12),  /* green */
+      rgba(168, 85, 247, 0.10)   /* purple */
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 
+  background-size:
+    cover,
+    24px 24px,
+    24px 24px;
+
+  background-position: center;
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* Portfolio cards */
+/* =====================
+   PORTFOLIO GRID
+===================== */
 .grid{
   margin-top: 18px;
   display: grid;
@@ -106,7 +126,9 @@ h1{
   transition: transform .12s ease;
 }
 
-.card:hover{ transform: translateY(-2px); }
+.card:hover{
+  transform: translateY(-2px);
+}
 
 .card h3{
   margin: 0 0 6px;
@@ -126,7 +148,9 @@ h1{
   color: var(--muted);
 }
 
-/* Blog list */
+/* =====================
+   BLOG LIST
+===================== */
 .postlist{
   display: grid;
   gap: 14px;
@@ -145,7 +169,9 @@ h1{
   margin-top: 6px;
 }
 
-/* Footer */
+/* =====================
+   FOOTER
+===================== */
 .footer{
   margin-top: 44px;
   padding-top: 18px;
@@ -158,7 +184,9 @@ h1{
   flex-wrap: wrap;
 }
 
-/*  New: social icon-link design */
+/* =====================
+   SOCIAL ICON LINKS
+===================== */
 .social{
   display: flex;
   gap: 12px;
@@ -206,7 +234,9 @@ h1{
   line-height: 1;
 }
 
-/* Responsive */
+/* =====================
+   RESPONSIVE
+===================== */
 @media (max-width: 800px){
   .grid{ grid-template-columns: 1fr; }
   .menu{ gap: 12px; }
