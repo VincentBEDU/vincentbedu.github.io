@@ -318,3 +318,53 @@ h1{
 /* DEBUG: if you see a red border, CSS is loading */
 body { outline: 6px solid red; }
 
+/* =========================
+   TIGHT ABOUT SPACING (override)
+========================= */
+
+/* Reduce the overall container padding */
+.container{
+  padding: 12px 0 26px !important;
+}
+
+/* Make the hero section shorter + closer to nav */
+.about-hero{
+  margin-top: 0 !important;
+  padding: 24px 0 !important;   /* smaller hero height */
+}
+
+/* Reduce spacing inside hero text block */
+.about-hero-inner h1{
+  margin: 0 0 8px !important;
+}
+
+.about-hero-lead{
+  margin: 0 !important;
+  font-size: 18px !important;  /* slightly smaller = cleaner */
+  max-width: 60ch;
+}
+
+/* Remove the big separator spacing before the two-column section */
+.about-grid{
+  margin-top: 10px !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
+}
+
+/* If you still want a subtle divider, uncomment this:
+.about-grid{
+  border-top: 1px solid rgba(0,0,0,0.06) !important;
+  padding-top: 10px !important;
+}
+*/
+
+/* Optional: reduce nav padding so everything sits closer */
+.nav{
+  padding: 10px 0 !important;
+}
+
+.about-hero{
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.08);
+}
+
+
