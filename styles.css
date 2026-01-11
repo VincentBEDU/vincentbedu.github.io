@@ -22,7 +22,7 @@ a:hover{ text-decoration: underline; }
 .container{
   width: min(var(--max), 92vw);
   margin: 0 auto;
-  padding: 34px 0 70px;
+  padding: 18px 0 40px; /* was 34px 0 70px */
 }
 
 /* =====================
@@ -33,7 +33,7 @@ a:hover{ text-decoration: underline; }
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 22px 0;
+  padding: 14px 0; /* tighter */
   border-bottom: 1px solid var(--border);
 }
 
@@ -115,12 +115,16 @@ h1{
 }
 
 /* Hero lead text */
-.about-hero-lead{
-  margin: 0;
-  font-size: 22px;
-  line-height: 1.5;
-  max-width: 58ch;
-  opacity: 0.95;
+.about-hero{
+  width: 100%;
+  margin-top: 0;        /* was 18px */
+  padding: 36px 0;      /* was 52px 0 */
+
+  background-image:
+    linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
+    url("images/about-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 /* About body section below hero */
