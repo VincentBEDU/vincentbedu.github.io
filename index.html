@@ -19,18 +19,22 @@
     </header>
 
     <main>
+  <!-- HERO (full-width background like Agnes) -->
+  <section class="about-hero">
+    <div class="about-hero-inner">
       <h1>ABOUT</h1>
+      <p class="about-hero-lead">
+        A data analyst driven by curiosity and resilience, helping organizations transform data
+        into actionable insights for real-world impact.
+      </p>
+    </div>
+  </section>
 
-      <!-- Highlight / Lead section -->
-      <section class="about-highlight">
-        <p class="lead">
-          A data analyst driven by curiosity and resilience, helping organizations
-          transform data into actionable insights for real-world impact.
-        </p>
-      </section>
-
-      <!-- Main About content -->
-      <section class="section">
+  <!-- TWO-COLUMN ABOUT (text left, photo right) -->
+  <section class="about-body">
+    <div class="about-grid">
+      <!-- LEFT: text -->
+      <div class="about-text">
         <p>
           Just a curious young man from a small village in Ghana who found his passion in data and discovery.
           Growing up without access to a computer, I completed junior high school having only seen computers
@@ -47,31 +51,34 @@
           My mission is simple: to use data to solve real-world problems — from housing equity and business strategy
           to policy and smarter cities. I believe data can help build fairer outcomes, and I’m committed to doing work that matters.
         </p>
-      </section>
+      </div>
 
-      <footer class="footer">
-        <div>© <span id="year"></span> Vincent Bedu</div>
+      <!-- RIGHT: photo -->
+      <aside class="about-photo">
+        <!-- Option A: Use an image file you upload to your repo (recommended) -->
+        <img src="images/vincent.jpg" alt="Photo of Vincent Bedu" />
 
-        <div class="social">
-          <a class="icon-link" href="https://github.com/VincentBEDU" target="_blank" rel="noreferrer" aria-label="GitHub">
-            <span class="icon">GH</span><span class="label">GitHub</span>
-          </a>
+        <!-- Option B (later): replace src with your actual filename/path -->
+      </aside>
+    </div>
+  </section>
 
-          <a class="icon-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <span class="icon">in</span><span class="label">LinkedIn</span>
-          </a>
+  <!-- FOOTER (keep yours) -->
+  <footer class="footer">
+    <div>© <span id="year"></span> Vincent Bedu</div>
 
-          <a class="icon-link" href="mailto:youremail@example.com" aria-label="Email">
-            <span class="icon">@</span><span class="label">Email</span>
-          </a>
-        </div>
-      </footer>
-    </main>
-  </div>
+    <div class="social">
+      <a class="icon-link" href="https://github.com/VincentBEDU" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <span class="icon">GH</span><span class="label">GitHub</span>
+      </a>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+      <a class="icon-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <span class="icon">in</span><span class="label">LinkedIn</span>
+      </a>
 
+      <a class="icon-link" href="mailto:youremail@example.com" aria-label="Email">
+        <span class="icon">@</span><span class="label">Email</span>
+      </a>
+    </div>
+  </footer>
+</main>
