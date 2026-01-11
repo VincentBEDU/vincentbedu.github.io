@@ -8,6 +8,8 @@
 </head>
 
 <body>
+
+  <!-- NAV stays constrained -->
   <div class="container">
     <header class="nav">
       <a class="brand" href="index.html">VINCENT BEDU</a>
@@ -17,68 +19,76 @@
         <a href="blog.html">Blog</a>
       </nav>
     </header>
+  </div>
 
-    <main>
-  <!-- HERO (full-width background like Agnes) -->
-  <section class="about-hero">
-    <div class="about-hero-inner">
-      <h1>ABOUT</h1>
-      <p class="about-hero-lead">
-        A data analyst driven by curiosity and resilience, helping organizations transform data
-        into actionable insights for real-world impact.
-      </p>
-    </div>
-  </section>
-
-  <!-- TWO-COLUMN ABOUT (text left, photo right) -->
-  <section class="about-body">
-    <div class="about-grid">
-      <!-- LEFT: text -->
-      <div class="about-text">
-        <p>
-          Just a curious young man from a small village in Ghana who found his passion in data and discovery.
-          Growing up without access to a computer, I completed junior high school having only seen computers
-          drawn on a blackboard. But that did not stop me — I was determined to learn, grow, and change my story.
-        </p>
-
-        <p>
-          Today, I use data to uncover patterns, communicate insight, and support better decision-making.
-          I work with <strong>Python, Excel, R, SQL, Power BI</strong>, and <strong>QGIS</strong>, and I’ve contributed to projects involving
-          predictive modeling, real estate valuation, and spatial optimization.
-        </p>
-
-        <p>
-          My mission is simple: to use data to solve real-world problems — from housing equity and business strategy
-          to policy and smarter cities. I believe data can help build fairer outcomes, and I’m committed to doing work that matters.
-        </p>
+  <main>
+    <!-- ✅ FULL-WIDTH HERO (outside container, like Agnes) -->
+    <section class="about-hero">
+      <div class="container">
+        <div class="about-hero-inner">
+          <h1>ABOUT</h1>
+          <p class="about-hero-lead">
+            A data analyst driven by curiosity and resilience, helping organizations transform data
+            into actionable insights for real-world impact.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <!-- RIGHT: photo -->
-      <aside class="about-photo">
-        <!-- Option A: Use an image file you upload to your repo (recommended) -->
-        <img src="images/vincent.jpg" alt="Photo of Vincent Bedu" />
+    <!-- ✅ BODY (inside container) -->
+    <section class="about-body">
+      <div class="container">
+        <div class="about-grid">
+          <!-- LEFT: text -->
+          <div class="about-text">
+            <p>
+              Just a curious young man from a small village in Ghana who found his passion in data and discovery.
+              Growing up without access to a computer, I completed junior high school having only seen computers
+              drawn on a blackboard. But that did not stop me — I was determined to learn, grow, and change my story.
+            </p>
 
-        <!-- Option B (later): replace src with your actual filename/path -->
-      </aside>
-    </div>
-  </section>
+            <p>
+              Today, I use data to uncover patterns, communicate insight, and support better decision-making.
+              I work with <strong>Python, Excel, R, SQL, Power BI</strong>, and <strong>QGIS</strong>, and I’ve contributed to projects involving
+              predictive modeling, real estate valuation, and spatial optimization.
+            </p>
 
-  <!-- FOOTER (keep yours) -->
-  <footer class="footer">
-    <div>© <span id="year"></span> Vincent Bedu</div>
+            <p>
+              My mission is simple: to use data to solve real-world problems — from housing equity and business strategy
+              to policy and smarter cities. I believe data can help build fairer outcomes, and I’m committed to doing work that matters.
+            </p>
+          </div>
 
-    <div class="social">
-      <a class="icon-link" href="https://github.com/VincentBEDU" target="_blank" rel="noreferrer" aria-label="GitHub">
-        <span class="icon">GH</span><span class="label">GitHub</span>
-      </a>
+          <!-- RIGHT: photo -->
+          <aside class="about-photo">
+            <img src="images/vincent.jpg" alt="Photo of Vincent Bedu" />
+          </aside>
+        </div>
 
-      <a class="icon-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-        <span class="icon">in</span><span class="label">LinkedIn</span>
-      </a>
+        <!-- FOOTER (inside container) -->
+        <footer class="footer">
+          <div>© <span id="year"></span> Vincent Bedu</div>
 
-      <a class="icon-link" href="mailto:youremail@example.com" aria-label="Email">
-        <span class="icon">@</span><span class="label">Email</span>
-      </a>
-    </div>
-  </footer>
-</main>
+          <div class="social">
+            <a class="icon-link" href="https://github.com/VincentBEDU" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <span class="icon">GH</span><span class="label">GitHub</span>
+            </a>
+
+            <a class="icon-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <span class="icon">in</span><span class="label">LinkedIn</span>
+            </a>
+
+            <a class="icon-link" href="mailto:youremail@example.com" aria-label="Email">
+              <span class="icon">@</span><span class="label">Email</span>
+            </a>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
