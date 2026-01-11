@@ -66,6 +66,7 @@ h1{
   letter-spacing: -0.02em;
 }
 
+/* Used elsewhere (not the hero) */
 .lead{
   color: var(--muted);
   font-size: 18px;
@@ -73,7 +74,7 @@ h1{
 }
 
 /* =====================
-   SECTIONS
+   GENERIC SECTION
 ===================== */
 .section{
   margin-top: 30px;
@@ -82,31 +83,84 @@ h1{
 }
 
 /* =====================
-   ABOUT HIGHLIGHT
-   (Gradient + Grid)
+   ✅ ABOUT PAGE (NEW HTML)
 ===================== */
-.about-highlight{
+
+/* Full-width hero (outside container) */
+.about-hero{
+  width: 100%;
   margin-top: 18px;
-  padding: 22px 22px;
-  border-radius: 16px;
 
+  /* Agnes-like banner */
   background-image:
-    linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.14),  /* blue */
-      rgba(16, 185, 129, 0.12),  /* green */
-      rgba(168, 85, 247, 0.10)   /* purple */
-    ),
-    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-
-  background-size:
-    cover,
-    24px 24px,
-    24px 24px;
-
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("images/about-bg.jpg");
+  background-size: cover;
   background-position: center;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+
+  /* Space + separation */
+  padding: 42px 0;
+}
+
+/* Keep hero text aligned with page */
+.about-hero-inner{
+  color: #fff;
+}
+
+/* Make ABOUT big inside hero */
+.about-hero-inner h1{
+  margin: 0 0 10px;
+  font-size: clamp(44px, 6vw, 78px);
+  letter-spacing: -0.03em;
+}
+
+/* Hero lead text */
+.about-hero-lead{
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.5;
+  max-width: 58ch;
+  opacity: 0.95;
+}
+
+/* About body section below hero */
+.about-body{
+  padding-top: 24px;
+}
+
+/* Two-column grid: text left, photo right */
+.about-grid{
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 24px;
+  align-items: start;
+
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+/* Paragraph spacing */
+.about-text p{
+  margin: 0 0 16px;
+}
+
+/* Photo column */
+.about-photo img{
+  width: 100%;
+  height: 520px;          /* forces nice portrait panel */
+  object-fit: cover;      /* crops neatly like Agnes */
+  display: block;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+/* Optional: keep photo visible on scroll (Agnes-like feel) */
+@media (min-width: 901px){
+  .about-photo{
+    position: sticky;
+    top: 92px;
+  }
 }
 
 /* =====================
@@ -230,13 +284,29 @@ h1{
   );
 }
 
-.label{
-  line-height: 1;
-}
+.label{ line-height: 1; }
 
 /* =====================
    RESPONSIVE
 ===================== */
+@media (max-width: 900px){
+  .about-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo img{
+    height: auto; /* no forced crop on mobile */
+  }
+
+  .about-hero{
+    padding: 34px 0;
+  }
+
+  .about-hero-lead{
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 800px){
   .grid{ grid-template-columns: 1fr; }
   .menu{ gap: 12px; }
