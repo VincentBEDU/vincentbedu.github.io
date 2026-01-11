@@ -19,10 +19,11 @@ body{
 a{ color: inherit; text-decoration: none; }
 a:hover{ text-decoration: underline; }
 
+/* Page width container */
 .container{
   width: min(var(--max), 92vw);
   margin: 0 auto;
-  padding: 18px 0 40px; /* was 34px 0 70px */
+  padding: 12px 0 26px;
 }
 
 /* =====================
@@ -33,16 +34,15 @@ a:hover{ text-decoration: underline; }
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 14px 0; /* tighter */
+  padding: 10px 0;
   border-bottom: 1px solid var(--border);
 }
 
 .brand{
   font-weight: 800;
   letter-spacing: .4px;
-  font-size: 18px;   /* increase from default */
+  font-size: 18px;
 }
-
 
 .menu{
   display: flex;
@@ -50,10 +50,8 @@ a:hover{ text-decoration: underline; }
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: .12em;
-
-  /* Subtle banner-inspired color */
   color: rgba(20, 60, 90, 0.75);
-  font-weight: 500;   
+  font-weight: 500;
 }
 
 .menu a{
@@ -66,7 +64,7 @@ a:hover{ text-decoration: underline; }
 }
 
 .menu a.active{
-  color: rgb(35, 140, 210); /* banner accent */
+  color: rgb(35, 140, 210);
   font-weight: 600;
   text-decoration: none;
 }
@@ -78,16 +76,9 @@ a:hover{ text-decoration: underline; }
   right: 0;
   bottom: -6px;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    #3b82f6,
-    #22c55e,
-    #06b6d4
-  );
+  background: linear-gradient(90deg, #3b82f6, #22c55e, #06b6d4);
   border-radius: 2px;
 }
-
-
 
 /* =====================
    TYPOGRAPHY
@@ -98,7 +89,6 @@ h1{
   letter-spacing: -0.02em;
 }
 
-/* Used elsewhere (not the hero) */
 .lead{
   color: var(--muted);
   font-size: 18px;
@@ -115,86 +105,80 @@ h1{
 }
 
 /* =====================
-   ✅ ABOUT PAGE (NEW HTML)
+   ABOUT PAGE (Hero + 2-column)
 ===================== */
 
-/* Full-width hero (outside container) */
-.about-hero h1{
-  font-size: clamp(34px, 4vw, 48px); /* reduced size */
-  color: #ffffff;                   /* force white */
-  margin-bottom: 12px;
-}
+/* Full-width hero */
+.about-hero{
+  width: 100%;
+  margin-top: 0;
+  padding: 26px 0; /* tight hero height */
 
-
-  /* Agnes-like banner */
+  /* Lighter overlay so it doesn't look too dark */
   background-image:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    linear-gradient(rgba(5, 25, 45, 0.35), rgba(5, 25, 45, 0.35)),
     url("images/about-bg.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 
-  /* Space + separation */
-  padding: 42px 0;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.08);
 }
 
-/* Keep hero text aligned with page */
+/* Keep hero content aligned with site container */
 .about-hero-inner{
   color: #fff;
 }
 
-/* Make ABOUT big inside hero */
-.about-hero-inner h1{
+/* ONLY the ABOUT word in banner */
+.about-hero h1{
   margin: 0 0 10px;
-  font-size: clamp(44px, 6vw, 78px);
+  font-size: clamp(28px, 3.5vw, 40px); /* smaller */
   letter-spacing: -0.03em;
+  color: #fff; /* force white */
 }
 
-/* Hero lead text */
-.about-hero{
-  width: 100%;
-  margin-top: 0;        /* was 18px */
-  padding: 36px 0;      /* was 52px 0 */
-
-  background-image:
-    linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
-    url("images/about-bg.jpg");
-  background-size: cover;
-  background-position: center;
+/* Hero lead text (force white) */
+.about-hero-lead{
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.55;
+  max-width: 60ch;
+  color: rgba(255,255,255,0.92);
 }
 
-/* About body section below hero */
+/* About body below hero */
 .about-body{
-  padding-top: 24px;
+  padding-top: 18px;
 }
 
-/* Two-column grid: text left, photo right */
+/* Two-column layout */
 .about-grid{
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
   gap: 24px;
   align-items: start;
 
-  margin-top: 26px;
-  padding-top: 22px;
-  border-top: 1px solid var(--border);
+  margin-top: 10px;   /* tight spacing */
+  padding-top: 0;
+  border-top: 0;
 }
 
-/* Paragraph spacing */
 .about-text p{
   margin: 0 0 16px;
 }
 
-/* Photo column */
+/* Photo */
 .about-photo img{
   width: 100%;
-  height: 520px;          /* forces nice portrait panel */
-  object-fit: cover;      /* crops neatly like Agnes */
+  height: 520px;
+  object-fit: cover;
   display: block;
   border-radius: 16px;
   border: 1px solid var(--border);
 }
 
-/* Optional: keep photo visible on scroll (Agnes-like feel) */
+/* Sticky photo on desktop */
 @media (min-width: 901px){
   .about-photo{
     position: sticky;
@@ -219,9 +203,7 @@ h1{
   transition: transform .12s ease;
 }
 
-.card:hover{
-  transform: translateY(-2px);
-}
+.card:hover{ transform: translateY(-2px); }
 
 .card h3{
   margin: 0 0 6px;
@@ -329,77 +311,14 @@ h1{
    RESPONSIVE
 ===================== */
 @media (max-width: 900px){
-  .about-grid{
-    grid-template-columns: 1fr;
-  }
-
-  .about-photo img{
-    height: auto; /* no forced crop on mobile */
-  }
-
-  .about-hero{
-    padding: 34px 0;
-  }
-
-  .about-hero-lead{
-    font-size: 18px;
-  }
+  .about-grid{ grid-template-columns: 1fr; }
+  .about-photo img{ height: auto; }
+  .about-hero{ padding: 22px 0; }
+  .about-hero-lead{ font-size: 17px; }
 }
 
 @media (max-width: 800px){
   .grid{ grid-template-columns: 1fr; }
   .menu{ gap: 12px; }
 }
-/* DEBUG: if you see a red border, CSS is loading */
-body { outline: 6px solid red; }
-
-/* =========================
-   TIGHT ABOUT SPACING (override)
-========================= */
-
-/* Reduce the overall container padding */
-.container{
-  padding: 12px 0 26px !important;
-}
-
-/* Make the hero section shorter + closer to nav */
-.about-hero{
-  margin-top: 0 !important;
-  padding: 24px 0 !important;   /* smaller hero height */
-}
-
-/* Reduce spacing inside hero text block */
-.about-hero-inner h1{
-  margin: 0 0 8px !important;
-}
-
-.about-hero-lead{
-  margin: 0 !important;
-  font-size: 18px !important;  /* slightly smaller = cleaner */
-  max-width: 60ch;
-}
-
-/* Remove the big separator spacing before the two-column section */
-.about-grid{
-  margin-top: 10px !important;
-  padding-top: 0 !important;
-  border-top: 0 !important;
-}
-
-/* If you still want a subtle divider, uncomment this:
-.about-grid{
-  border-top: 1px solid rgba(0,0,0,0.06) !important;
-  padding-top: 10px !important;
-}
-*/
-
-/* Optional: reduce nav padding so everything sits closer */
-.nav{
-  padding: 10px 0 !important;
-}
-
-.about-hero{
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.08);
-}
-
 
