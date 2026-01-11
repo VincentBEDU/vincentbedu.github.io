@@ -311,4 +311,6 @@ h1{
   .grid{ grid-template-columns: 1fr; }
   .menu{ gap: 12px; }
 }
+/* DEBUG: if you see a red border, CSS is loading */
+body { outline: 6px solid red; }
 
