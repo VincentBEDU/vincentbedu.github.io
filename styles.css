@@ -138,14 +138,18 @@ h1{
   color: #fff; /* force white */
 }
 
-/* Hero lead text (force white) */
 .about-hero-lead{
   margin: 0;
   font-size: 18px;
   line-height: 1.55;
   max-width: 60ch;
-  color: rgba(255,255,255,0.92);
+
+  color: #ffffff;          /* force pure white */
+  opacity: 0.95;   /* slightly softer than title */
+
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
 }
+
 
 /* About body below hero */
 .about-body{
