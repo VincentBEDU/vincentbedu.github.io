@@ -39,23 +39,55 @@ a:hover{ text-decoration: underline; }
 
 .brand{
   font-weight: 800;
-  letter-spacing: .2px;
+  letter-spacing: .4px;
+  font-size: 18px;   /* increase from default */
 }
+
 
 .menu{
   display: flex;
-  gap: 16px;
-  font-size: 14px;
+  gap: 20px;
+  font-size: 15px;
   text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--muted);
+  letter-spacing: .12em;
+
+  /* Subtle banner-inspired color */
+  color: rgba(20, 60, 90, 0.75);
+  font-weight: 500;   
+}
+
+.menu a{
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover{
+  color: rgb(30, 120, 180);
 }
 
 .menu a.active{
-  color: var(--text);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  color: rgb(35, 140, 210); /* banner accent */
+  font-weight: 600;
+  text-decoration: none;
 }
+
+.menu a.active::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #3b82f6,
+    #22c55e,
+    #06b6d4
+  );
+  border-radius: 2px;
+}
+
+
 
 /* =====================
    TYPOGRAPHY
@@ -87,9 +119,10 @@ h1{
 ===================== */
 
 /* Full-width hero (outside container) */
-.about-hero{
-  width: 100%;
-  margin-top: 18px;
+.about-hero h1{
+  font-size: clamp(36px, 5vw, 56px); /* was too big */
+  margin-bottom: 12px;
+}
 
   /* Agnes-like banner */
   background-image:
