@@ -120,9 +120,11 @@ h1{
 
 /* Full-width hero (outside container) */
 .about-hero h1{
-  font-size: clamp(36px, 5vw, 56px); /* was too big */
+  font-size: clamp(34px, 4vw, 48px); /* reduced size */
+  color: #ffffff;                   /* force white */
   margin-bottom: 12px;
 }
+
 
   /* Agnes-like banner */
   background-image:
