@@ -6,6 +6,9 @@
   --muted: #555;
   --border: #e7e7e7;
   --max: 980px;
+
+  /* New: page background for contrast */
+  --page-bg: #f6f7f8;
 }
 
 *{ box-sizing: border-box; }
@@ -15,7 +18,7 @@ body{
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
-  background: #fff;
+  background: var(--page-bg); /* UPDATED from #fff */
   line-height: 1.7;
 }
 
@@ -113,17 +116,13 @@ h1{
 .about-hero{
   width: 100%;
   margin-top: 0;
-  padding: 26px 0; /* tight hero height */
-
-  /* Lighter overlay so it doesn't look too dark */
+  padding: 26px 0;
   background-image:
     linear-gradient(rgba(5, 25, 45, 0.35), rgba(5, 25, 45, 0.35)),
     url("images/about-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* tiny divider line */
   box-shadow: inset 0 -1px 0 rgba(0,0,0,0.08);
 }
 
@@ -159,7 +158,6 @@ h1{
   font-size: 18px;
   line-height: 1.55;
   max-width: 60ch;
-
   color: #fff;
   opacity: 0.95;
   text-shadow: 0 1px 2px rgba(0,0,0,0.25);
@@ -179,7 +177,6 @@ h1{
   grid-template-columns: 1.25fr 0.75fr;
   gap: 24px;
   align-items: start;
-
   margin-top: 10px;
   padding-top: 0;
   border-top: 0;
@@ -209,10 +206,8 @@ h1{
   height: 520px;
   object-fit: cover;
   display: block;
-
   border-radius: 16px;
   border: 1px solid var(--border);
-
   transition: transform 0.25s ease;
   will-change: transform;
 }
@@ -243,10 +238,14 @@ h1{
   border: 1px solid var(--border);
   padding: 16px;
   border-radius: 12px;
-  transition: transform .12s ease;
+  transition: transform .12s ease, box-shadow .12s ease;
+  background: #fff; /* Important with new page background */
 }
 
-.card:hover{ transform: translateY(-2px); }
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
 
 .card h3{
   margin: 0 0 6px;
@@ -279,6 +278,7 @@ h1{
   padding: 16px;
   border: 1px solid var(--border);
   border-radius: 12px;
+  background: #fff; /* Important with new page background */
 }
 
 .post .meta{
@@ -375,6 +375,6 @@ h1{
 
 @media (max-width: 800px){
   .grid{ grid-template-columns: 1fr; }
-  .menu{ gap: 12px; }
+  .menu{ gap: 12px; font-size: 14px; }
 }
 
