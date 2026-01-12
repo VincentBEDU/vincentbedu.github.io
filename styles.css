@@ -7,8 +7,11 @@
   --border: #e7e7e7;
   --max: 980px;
 
-  /* New: page background for contrast */
+  /* Page background for contrast */
   --page-bg: #f6f7f8;
+
+  /* Accessibility focus ring */
+  --focus: #60a5fa;
 }
 
 *{ box-sizing: border-box; }
@@ -18,7 +21,7 @@ body{
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
-  background: var(--page-bg); /* UPDATED from #fff */
+  background: var(--page-bg);
   line-height: 1.7;
 }
 
@@ -111,8 +114,6 @@ h1{
 /* =====================
    ABOUT PAGE (Hero + 2-column)
 ===================== */
-
-/* Full-width hero */
 .about-hero{
   width: 100%;
   margin-top: 0;
@@ -126,25 +127,21 @@ h1{
   box-shadow: inset 0 -1px 0 rgba(0,0,0,0.08);
 }
 
-/* Hero entrance animation */
 @keyframes fadeUp{
   from{ opacity: 0; transform: translateY(10px); }
   to{ opacity: 1; transform: translateY(0); }
 }
 
-/* Staggered paragraph animation */
 @keyframes fadeUpDelayed{
   from{ opacity: 0; transform: translateY(6px); }
   to{ opacity: 1; transform: translateY(0); }
 }
 
-/* Keep hero content aligned with container + animate */
 .about-hero-inner{
   color: #fff;
   animation: fadeUp 0.6s ease-out both;
 }
 
-/* ONLY the ABOUT word in banner */
 .about-hero h1{
   margin: 0 0 10px;
   font-size: clamp(28px, 3.5vw, 40px);
@@ -152,7 +149,6 @@ h1{
   color: #fff;
 }
 
-/* Hero lead text */
 .about-hero-lead{
   margin: 0;
   font-size: 18px;
@@ -166,12 +162,10 @@ h1{
   animation-delay: 0.15s;
 }
 
-/* About body below hero */
 .about-body{
   padding-top: 18px;
 }
 
-/* Two-column layout */
 .about-grid{
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
@@ -182,7 +176,6 @@ h1{
   border-top: 0;
 }
 
-/* About text */
 .about-text p{
   margin: 0 0 16px;
   font-size: 18px;
@@ -216,7 +209,6 @@ h1{
   transform: translateY(-4px);
 }
 
-/* Sticky photo on desktop */
 @media (min-width: 901px){
   .about-photo{
     position: sticky;
@@ -239,7 +231,7 @@ h1{
   padding: 16px;
   border-radius: 12px;
   transition: transform .12s ease, box-shadow .12s ease;
-  background: #fff; /* Important with new page background */
+  background: #fff;
 }
 
 .card:hover{
@@ -278,7 +270,7 @@ h1{
   padding: 16px;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: #fff; /* Important with new page background */
+  background: #fff;
 }
 
 .post .meta{
@@ -292,20 +284,23 @@ h1{
 ===================== */
 .footer{
   margin-top: 44px;
-  padding-top: 18px;
   border-top: 1px solid var(--border);
   color: var(--muted);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
+
+  /* Optional polish: footer looks like a panel */
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  padding: 24px;
 }
 
 /* =====================
    SOCIAL LINKS (FINAL)
-   - colored pill background
-   - white icons + labels
 ===================== */
 .social{
   display: flex;
@@ -340,6 +335,25 @@ h1{
   text-decoration: none;
 }
 
+/* Accessibility: keyboard focus ring */
+.icon-link:focus-visible{
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Platform-specific hover tints (add these classes in HTML) */
+.icon-link.github:hover{
+  background: linear-gradient(135deg, #111827, #374151);
+}
+
+.icon-link.linkedin:hover{
+  background: linear-gradient(135deg, #0a66c2, #0ea5e9);
+}
+
+.icon-link.email:hover{
+  background: linear-gradient(135deg, #334155, #14b8a6);
+}
+
 /* Icon box */
 .icon{
   width: 22px;
@@ -350,7 +364,6 @@ h1{
   color: #fff;
 }
 
-/* Make inline SVGs use currentColor */
 .icon svg{
   width: 100%;
   height: 100%;
@@ -377,4 +390,3 @@ h1{
   .grid{ grid-template-columns: 1fr; }
   .menu{ gap: 12px; font-size: 14px; }
 }
-
