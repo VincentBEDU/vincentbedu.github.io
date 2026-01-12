@@ -480,3 +480,62 @@ h1{
   color: var(--text);
 }
 
+/* =====================
+   SOCIAL LINKS – PREMIUM STYLE
+===================== */
+
+.social{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Pill buttons */
+.icon-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  background: linear-gradient(
+    135deg,
+    #1e3a8a,   /* deep blue */
+    #0ea5a4    /* teal */
+  );
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover lift */
+.icon-link:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  text-decoration: none;
+}
+
+/* Icon container */
+.icon{
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG icons */
+.icon svg{
+  width: 100%;
+  height: 100%;
+  fill: #fff;
+}
+
+/* Label text */
+.icon-link .label{
+  color: #fff;
+  line-height: 1;
+}
