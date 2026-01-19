@@ -390,3 +390,111 @@ h1{
   .grid{ grid-template-columns: 1fr; }
   .menu{ gap: 12px; font-size: 14px; }
 }
+
+/* =====================
+   PORTFOLIO PAGE POLISH
+===================== */
+
+/* Use same hero style, but swap image */
+.portfolio-hero{
+  background-image:
+    linear-gradient(rgba(5, 25, 45, 0.35), rgba(5, 25, 45, 0.35)),
+    url("images/portfolio-bg.jpg");
+}
+
+/* Section header row (Gallery + filters) */
+.section-head{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.section-head h2{
+  margin: 0;
+}
+
+/* Filter chips (static UI for now) */
+.filters{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip{
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: rgba(20, 60, 90, 0.75);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.chip:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+.chip.is-active{
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+}
+
+/* Tags */
+.tags{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0 14px;
+}
+
+.tag{
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: rgba(20, 60, 90, 0.78);
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(231,231,231,0.9);
+}
+
+/* Card bottom row: links left, CTA right */
+.card-actions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Small CTA button (keeps your theme) */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #1e3a8a, #0ea5a4);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  filter: brightness(1.03);
+  text-decoration: none;
+}
+
+.btn:focus-visible{
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
