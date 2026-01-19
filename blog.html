@@ -6,7 +6,9 @@
   <title>Vincent Bedu — Blog</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <!-- NAV stays constrained -->
   <div class="container">
     <header class="nav">
       <a class="brand" href="index.html">VINCENT BEDU</a>
@@ -16,41 +18,103 @@
         <a class="active" href="blog.html">Blog</a>
       </nav>
     </header>
+  </div>
 
-    <main>
-      <h1>BLOG</h1>
-      <p class="lead">
-        Notes, reflections, and case studies from my journey through data analysis and storytelling.
-      </p>
+  <main>
+    <!-- FULL-WIDTH HERO (same look as About/Portfolio) -->
+    <section class="about-hero blog-hero">
+      <div class="container">
+        <div class="about-hero-inner">
+          <h1>BLOG</h1>
+          <p class="about-hero-lead">
+            Notes, reflections, and case studies from my journey through data analysis and storytelling.
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <div class="container about-body">
       <section class="section">
+        <div class="section-head">
+          <h2>Latest posts</h2>
+
+          <!-- Optional search UI (visual only for now) -->
+          <div class="blog-tools" aria-label="Blog tools">
+            <input class="search" type="search" placeholder="Search posts…" aria-label="Search posts" />
+            <a class="btn" href="blog/restarting.html">Featured</a>
+          </div>
+        </div>
+
         <div class="postlist">
           <article class="post">
             <a href="blog/restarting.html"><strong>Restarting, Relearning, Rebuilding</strong></a>
             <div class="meta">5 min read • 2026</div>
             <p class="meta">A reflection on learning, building projects, and growing in data.</p>
+
+            <div class="post-actions">
+              <div class="tags" aria-label="Post tags">
+                <span class="tag">Reflection</span>
+                <span class="tag">Learning</span>
+                <span class="tag">Career</span>
+              </div>
+              <a class="btn" href="blog/restarting.html">Read</a>
+            </div>
           </article>
 
           <article class="post">
             <strong>Getting the Problem Statement Right</strong>
             <div class="meta">Coming soon</div>
+
+            <div class="post-actions">
+              <div class="tags" aria-label="Post tags">
+                <span class="tag">Frameworks</span>
+                <span class="tag">Analytics</span>
+              </div>
+              <span class="btn btn-ghost" aria-disabled="true">Soon</span>
+            </div>
           </article>
         </div>
       </section>
 
+      <!-- FOOTER (same as About/Portfolio style) -->
       <footer class="footer">
         <div>© <span id="year"></span> Vincent Bedu</div>
+
         <div class="social">
-          <a href="https://github.com/VincentBEDU" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="mailto:youremail@example.com">Email</a>
+          <a class="icon-link github" href="https://github.com/VincentBEDU" target="_blank" rel="noreferrer">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                <path d="M12 .5C5.73.5.75 5.7.75 12.2c0 5.2 3.44 9.62 8.2 11.18.6.12.82-.27.82-.6v-2.2c-3.34.76-4.04-1.66-4.04-1.66-.55-1.44-1.33-1.82-1.33-1.82-1.08-.77.08-.76.08-.76 1.2.09 1.83 1.27 1.83 1.27 1.06 1.88 2.78 1.33 3.46 1.02.11-.8.42-1.33.76-1.64-2.66-.31-5.46-1.38-5.46-6.14 0-1.36.46-2.47 1.22-3.34-.12-.31-.53-1.58.12-3.29 0 0 1.01-.33 3.3 1.27a11 11 0 0 1 3-.42c1.02 0 2.05.15 3 .42 2.29-1.6 3.3-1.27 3.3-1.27.65 1.71.24 2.98.12 3.29.76.87 1.22 1.98 1.22 3.34 0 4.78-2.8 5.83-5.47 6.13.43.39.81 1.15.81 2.32v3.43c0 .33.22.73.83.6 4.76-1.56 8.2-5.98 8.2-11.18C23.25 5.7 18.27.5 12 .5z"/>
+              </svg>
+            </span>
+            <span class="label">GitHub</span>
+          </a>
+
+          <a class="icon-link linkedin" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                <path d="M20.45 20.45h-3.56v-5.6c0-1.34-.03-3.06-1.86-3.06-1.86 0-2.15 1.45-2.15 2.96v5.7H9.32V9h3.41v1.56h.05c.47-.9 1.62-1.86 3.34-1.86 3.57 0 4.23 2.35 4.23 5.4v6.35zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/>
+              </svg>
+            </span>
+            <span class="label">LinkedIn</span>
+          </a>
+
+          <a class="icon-link email" href="mailto:youremail@example.com">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </span>
+            <span class="label">Email</span>
+          </a>
         </div>
       </footer>
-    </main>
-  </div>
+    </div>
+  </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
