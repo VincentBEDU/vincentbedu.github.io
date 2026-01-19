@@ -498,3 +498,71 @@ h1{
   outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
+
+/* =====================
+   BLOG PAGE POLISH
+===================== */
+
+.blog-hero{
+  background-image:
+    linear-gradient(rgba(5, 25, 45, 0.35), rgba(5, 25, 45, 0.35)),
+    url("images/blog-bg.jpg");
+}
+
+.blog-tools{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search{
+  height: 40px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.9);
+  font-size: 14px;
+  outline: none;
+}
+
+.search:focus-visible{
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Make posts feel more “card-like” */
+.post{
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.post:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+.post-actions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* Optional ghost button for disabled state */
+.btn-ghost{
+  background: #fff;
+  color: rgba(20, 60, 90, 0.75);
+  border: 1px solid var(--border);
+  box-shadow: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.btn-ghost:hover{
+  transform: none;
+  box-shadow: none;
+  filter: none;
+}
+
