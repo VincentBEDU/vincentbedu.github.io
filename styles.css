@@ -1,11 +1,14 @@
 :root{
   --text: #111;
-  --muted: #666;
-  --border: #e8e8e8;
-  --bg-soft: #f7f7f7;
+  --muted: #5f6470;
+  --border: #d9dee8;
+  --bg-soft: #f6f8fc;
   --max: 1100px;
-  --page-bg: #ffffff;
+  --page-bg: #eef3f8;
+  --surface: #ffffff;
+  --hero-bg: linear-gradient(135deg, #dbeafe 0%, #e9d5ff 45%, #fce7f3 100%);
   --focus: #60a5fa;
+  --shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
 }
 
 *{ box-sizing: border-box; }
@@ -48,7 +51,7 @@ a:hover{
   justify-content: space-between;
   gap: 12px;
   padding: 14px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(17,17,17,0.08);
 }
 
 .brand{
@@ -64,7 +67,7 @@ a:hover{
 }
 
 .menu a{
-  color: var(--muted);
+  color: #475569;
   position: relative;
   padding-bottom: 4px;
   transition: color 0.2s ease;
@@ -87,16 +90,17 @@ a:hover{
 }
 
 /* =====================
-   HERO
+   HERO / BANNER
 ===================== */
 .about-hero{
   width: 100%;
-  padding: 72px 0 56px;
-  border-bottom: 1px solid var(--border);
+  padding: 86px 0 72px;
+  border-bottom: 1px solid rgba(17,17,17,0.06);
+  background: var(--hero-bg);
 }
 
 .portfolio-hero{
-  background: linear-gradient(180deg, #fafafa 0%, #f3f3f3 100%);
+  background: linear-gradient(135deg, #c7d2fe 0%, #dbeafe 35%, #f5d0fe 100%);
 }
 
 .about-hero-inner{
@@ -104,24 +108,24 @@ a:hover{
 }
 
 .about-hero h1{
-  margin: 0 0 10px;
-  font-size: clamp(2.2rem, 6vw, 4.4rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
+  margin: 0 0 14px;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
 }
 
 .about-hero-lead{
   margin: 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-  max-width: 640px;
+  color: #475569;
+  font-size: 1.15rem;
+  max-width: 700px;
 }
 
 /* =====================
    PAGE BODY
 ===================== */
 .about-body{
-  padding-top: 26px;
+  padding-top: 34px;
 }
 
 .section{
@@ -149,6 +153,57 @@ a:hover{
 }
 
 /* =====================
+   ABOUT SECTION CARD
+===================== */
+.about-grid{
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 28px;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid rgba(17,17,17,0.06);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.about-text p{
+  margin: 0 0 16px;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.about-text p:last-child{
+  margin-bottom: 0;
+}
+
+.about-intro{
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.about-photo img{
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid rgba(17,17,17,0.06);
+  transition: transform 0.25s ease;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+}
+
+.about-photo img:hover{
+  transform: translateY(-4px);
+}
+
+@media (min-width: 901px){
+  .about-photo{
+    position: sticky;
+    top: 92px;
+  }
+}
+
+/* =====================
    PORTFOLIO GRID
 ===================== */
 .portfolio-grid{
@@ -158,24 +213,25 @@ a:hover{
 }
 
 .project-card{
-  border: 1px solid var(--border);
+  border: 1px solid rgba(17,17,17,0.06);
   border-radius: 24px;
   overflow: hidden;
-  background: #fff;
+  background: var(--surface);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
 }
 
 .project-card:hover{
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  border-color: #dcdcdc;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+  border-color: #cfd8e3;
 }
 
 .project-visual{
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 10;
-  background: #ececec;
+  background: #dfe7f1;
 }
 
 .project-visual img{
@@ -192,7 +248,7 @@ a:hover{
 .project-overlay{
   position: absolute;
   inset: 0;
-  background: rgba(10,10,10,0.52);
+  background: rgba(15,23,42,0.58);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,10 +333,39 @@ a:hover{
   align-items: center;
   padding: 6px 10px;
   border-radius: 999px;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
+  background: #f4f7fb;
+  border: 1px solid #e2e8f0;
   font-size: 0.82rem;
-  color: #333;
+  color: #334155;
+}
+
+/* =====================
+   BLOG PAGE
+===================== */
+.postlist{
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.post{
+  padding: 18px;
+  border: 1px solid rgba(17,17,17,0.06);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.post:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.08);
+}
+
+.post .meta{
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
 }
 
 /* =====================
@@ -292,7 +377,7 @@ a:hover{
   align-items: center;
   gap: 14px;
   padding: 26px 0 10px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(17,17,17,0.06);
   margin-top: 28px;
   flex-wrap: wrap;
 }
@@ -321,84 +406,12 @@ a:hover{
 }
 
 /* =====================
-   OPTIONAL ABOUT PAGE
-===================== */
-.about-grid{
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 24px;
-  align-items: start;
-}
-
-.about-text p{
-  margin: 0 0 16px;
-  font-size: 18px;
-  line-height: 1.85;
-}
-
-.about-text p:last-child{
-  margin-bottom: 0;
-}
-
-.about-intro{
-  font-size: 19px;
-  font-weight: 500;
-}
-
-.about-photo img{
-  width: 100%;
-  height: 520px;
-  object-fit: cover;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  transition: transform 0.25s ease;
-}
-
-.about-photo img:hover{
-  transform: translateY(-4px);
-}
-
-@media (min-width: 901px){
-  .about-photo{
-    position: sticky;
-    top: 92px;
-  }
-}
-
-/* =====================
-   OPTIONAL BLOG PAGE
-===================== */
-.postlist{
-  display: grid;
-  gap: 14px;
-  margin-top: 18px;
-}
-
-.post{
-  padding: 16px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: #fff;
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-
-.post:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-}
-
-.post .meta{
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: 6px;
-}
-
-/* =====================
    RESPONSIVE
 ===================== */
 @media (max-width: 900px){
   .about-grid{
     grid-template-columns: 1fr;
+    padding: 20px;
   }
 
   .about-photo img{
@@ -419,7 +432,7 @@ a:hover{
   }
 
   .about-hero{
-    padding: 56px 0 40px;
+    padding: 62px 0 48px;
   }
 
   .project-overlay-content{
