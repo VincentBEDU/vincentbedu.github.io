@@ -721,6 +721,12 @@ h1{
   }
 }
 
+
+.portfolio-card{
+  position: relative;
+  transition: transform .3s ease;
+}
+
 .portfolio-github{
   position: absolute;
   bottom: 18px;
@@ -740,4 +746,9 @@ h1{
 .portfolio-card:hover .portfolio-github{
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Card hover lift */
+.portfolio-card:hover{
+  transform: translateY(-6px);
 }
