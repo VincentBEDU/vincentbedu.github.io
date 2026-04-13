@@ -720,3 +720,24 @@ h1{
     font-size: 0.9rem;
   }
 }
+
+.portfolio-github{
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  background: rgba(255,255,255,0.12);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: white;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .3s ease;
+  backdrop-filter: blur(4px);
+}
+
+/* Show on hover */
+.portfolio-card:hover .portfolio-github{
+  opacity: 1;
+  transform: translateY(0);
+}
