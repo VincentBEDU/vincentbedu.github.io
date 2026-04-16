@@ -5,7 +5,7 @@
   --text: #111;
   --muted: #555;
   --border: #e7e7e7;
-  --max: 980px;
+  --max: 1280px;
 
   /* Page background for contrast */
   --page-bg: #f6f7f8;
@@ -603,8 +603,8 @@ h1{
 ===================== */
 .portfolio-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 2.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 2.5rem;
   margin-top: 2rem;
 }
 
@@ -612,31 +612,31 @@ h1{
   position: relative;
   display: block;
   overflow: hidden;
-  min-height: 360px;
-  border-radius: 22px;
+  min-height: 420px;
+  border-radius: 24px;
   text-decoration: none;
   background: #1D2A50;
-  box-shadow: 0 14px 36px rgba(13, 22, 48, 0.14);
+  box-shadow: 0 16px 40px rgba(13, 22, 48, 0.14);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-card:hover{
   transform: translateY(-8px);
-  box-shadow: 0 22px 48px rgba(13, 22, 48, 0.18);
+  box-shadow: 0 24px 52px rgba(13, 22, 48, 0.18);
   text-decoration: none;
 }
 
 .portfolio-card img{
   width: 100%;
   height: 100%;
-  min-height: 360px;
+  min-height: 420px;
   object-fit: cover;
   display: block;
   transition: transform 0.45s ease;
 }
 
 .portfolio-card:hover img{
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .portfolio-overlay{
@@ -645,35 +645,35 @@ h1{
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.6rem;
+  padding: 1.75rem;
   background: linear-gradient(
     to top,
-    rgba(29, 42, 80, 0.72) 0%,
-    rgba(29, 42, 80, 0.42) 45%,
-    rgba(29, 42, 80, 0.08) 100%
+    rgba(29, 42, 80, 0.52) 0%,
+    rgba(29, 42, 80, 0.22) 42%,
+    rgba(29, 42, 80, 0.03) 100%
   );
   color: #fff;
 }
 
 .portfolio-text{
   margin-top: auto;
-  max-width: 30ch;
+  max-width: 32ch;
 }
 
 .portfolio-text h3{
-  margin: 0 0 0.65rem;
-  font-size: 1.35rem;
-  line-height: 1.25;
+  margin: 0 0 0.7rem;
+  font-size: 1.55rem;
+  line-height: 1.2;
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.12);
 }
 
 .portfolio-text p{
   margin: 0;
-  font-size: 1.02rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.94);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.12);
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.10);
 }
 
 /* GitHub badge appears on hover */
@@ -681,7 +681,7 @@ h1{
   position: absolute;
   right: 18px;
   bottom: 18px;
-  background: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.22);
   color: #fff;
   padding: 10px 16px;
   border-radius: 999px;
@@ -691,7 +691,7 @@ h1{
   transform: translateY(10px);
   transition: all .3s ease;
   backdrop-filter: blur(6px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.10);
 }
 
 .portfolio-card:hover .portfolio-github{
@@ -701,19 +701,19 @@ h1{
 
 /* Optional category accents */
 .portfolio-card.analytics{
-  box-shadow: 0 14px 36px rgba(29, 42, 80, 0.14);
+  box-shadow: 0 16px 40px rgba(29, 42, 80, 0.14);
 }
 
 .portfolio-card.healthcare{
-  box-shadow: 0 14px 36px rgba(29, 42, 80, 0.14);
+  box-shadow: 0 16px 40px rgba(29, 42, 80, 0.14);
 }
 
 .portfolio-card.storytelling{
-  box-shadow: 0 14px 36px rgba(29, 42, 80, 0.14);
+  box-shadow: 0 16px 40px rgba(29, 42, 80, 0.14);
 }
 
 .portfolio-card.dashboard{
-  box-shadow: 0 14px 36px rgba(29, 42, 80, 0.14);
+  box-shadow: 0 16px 40px rgba(29, 42, 80, 0.14);
 }
 
 
@@ -757,7 +757,7 @@ h1{
 
   .portfolio-card,
   .portfolio-card img{
-    min-height: 280px;
+    min-height: 300px;
   }
 
   .portfolio-overlay{
@@ -769,11 +769,11 @@ h1{
   }
 
   .portfolio-text h3{
-    font-size: 1.08rem;
+    font-size: 1.12rem;
   }
 
   .portfolio-text p{
-    font-size: 0.92rem;
+    font-size: 0.94rem;
   }
 
   .portfolio-github{
