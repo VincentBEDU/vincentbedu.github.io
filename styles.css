@@ -25,8 +25,14 @@ body{
   line-height: 1.7;
 }
 
-a{ color: inherit; text-decoration: none; }
-a:hover{ text-decoration: underline; }
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
 
 /* Page width container */
 .container{
@@ -34,6 +40,7 @@ a:hover{ text-decoration: underline; }
   margin: 0 auto;
   padding: 12px 0 26px;
 }
+
 
 /* =====================
    TOP NAVIGATION
@@ -89,8 +96,9 @@ a:hover{ text-decoration: underline; }
   border-radius: 2px;
 }
 
+
 /* =====================
-   TYPOGRAPHY (general)
+   TYPOGRAPHY
 ===================== */
 h1{
   font-size: clamp(34px, 5vw, 52px);
@@ -104,15 +112,16 @@ h1{
   max-width: 70ch;
 }
 
-/* Generic section (if used elsewhere) */
+/* Generic section */
 .section{
   margin-top: 30px;
   padding-top: 24px;
   border-top: 1px solid var(--border);
 }
 
+
 /* =====================
-   ABOUT PAGE (Hero + 2-column)
+   ABOUT PAGE HERO
 ===================== */
 .about-hero{
   width: 100%;
@@ -128,13 +137,25 @@ h1{
 }
 
 @keyframes fadeUp{
-  from{ opacity: 0; transform: translateY(10px); }
-  to{ opacity: 1; transform: translateY(0); }
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeUpDelayed{
-  from{ opacity: 0; transform: translateY(6px); }
-  to{ opacity: 1; transform: translateY(0); }
+  from{
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .about-hero-inner{
@@ -157,7 +178,6 @@ h1{
   color: #fff;
   opacity: 0.95;
   text-shadow: 0 1px 2px rgba(0,0,0,0.25);
-
   animation: fadeUpDelayed 0.6s ease-out both;
   animation-delay: 0.15s;
 }
@@ -166,6 +186,10 @@ h1{
   padding-top: 18px;
 }
 
+
+/* =====================
+   ABOUT PAGE GRID
+===================== */
 .about-grid{
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
@@ -190,6 +214,7 @@ h1{
   font-size: 19px;
   font-weight: 500;
 }
+
 
 /* =====================
    ABOUT PHOTO
@@ -216,8 +241,9 @@ h1{
   }
 }
 
+
 /* =====================
-   PORTFOLIO GRID
+   GENERIC GRID + CARDS
 ===================== */
 .grid{
   margin-top: 18px;
@@ -257,6 +283,7 @@ h1{
   color: var(--muted);
 }
 
+
 /* =====================
    BLOG LIST
 ===================== */
@@ -271,6 +298,12 @@ h1{
   border: 1px solid var(--border);
   border-radius: 12px;
   background: #fff;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.post:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
 }
 
 .post .meta{
@@ -279,6 +312,7 @@ h1{
   margin-top: 6px;
 }
 
+
 /* =====================
    FOOTER
 ===================== */
@@ -286,21 +320,19 @@ h1{
   margin-top: 44px;
   border-top: 1px solid var(--border);
   color: var(--muted);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
-
-  /* Optional polish: footer looks like a panel */
   background: #fff;
   border-radius: 16px 16px 0 0;
   padding: 24px;
 }
 
+
 /* =====================
-   SOCIAL LINKS (FINAL)
+   SOCIAL LINKS
 ===================== */
 .social{
   display: flex;
@@ -309,22 +341,18 @@ h1{
   flex-wrap: wrap;
 }
 
-/* Pill buttons */
 .icon-link{
   display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 10px 16px;
   border-radius: 999px;
-
   background: linear-gradient(135deg, #1e3a8a, #0ea5a4);
   border: none;
-
   color: #fff;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
@@ -335,13 +363,11 @@ h1{
   text-decoration: none;
 }
 
-/* Accessibility: keyboard focus ring */
 .icon-link:focus-visible{
   outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
 
-/* Platform-specific hover tints (add these classes in HTML) */
 .icon-link.github:hover{
   background: linear-gradient(135deg, #111827, #374151);
 }
@@ -354,7 +380,6 @@ h1{
   background: linear-gradient(135deg, #334155, #14b8a6);
 }
 
-/* Icon box */
 .icon{
   width: 22px;
   height: 22px;
@@ -376,26 +401,10 @@ h1{
   line-height: 1;
 }
 
-/* =====================
-   RESPONSIVE
-===================== */
-@media (max-width: 900px){
-  .about-grid{ grid-template-columns: 1fr; }
-  .about-photo img{ height: auto; }
-  .about-hero{ padding: 22px 0; }
-  .about-hero-lead{ font-size: 17px; }
-}
-
-@media (max-width: 800px){
-  .grid{ grid-template-columns: 1fr; }
-  .menu{ gap: 12px; font-size: 14px; }
-}
 
 /* =====================
-   PORTFOLIO PAGE POLISH
+   PORTFOLIO HERO
 ===================== */
-
-/* Hero: premium gradient (no image required, never grey/ash) */
 .portfolio-hero{
   background:
     radial-gradient(900px 420px at 10% 25%, rgba(59,130,246,0.45), transparent 55%),
@@ -410,12 +419,14 @@ h1{
   border-bottom: 1px solid rgba(255,255,255,0.10);
 }
 
-/* Keep hero text nicely constrained */
 .portfolio-hero .about-hero-inner{
   max-width: 70ch;
 }
 
-/* Section header row (Gallery + filters) */
+
+/* =====================
+   SECTION HEADER
+===================== */
 .section-head{
   display: flex;
   align-items: flex-end;
@@ -428,7 +439,10 @@ h1{
   margin: 0;
 }
 
-/* Filter chips */
+
+/* =====================
+   FILTER CHIPS
+===================== */
 .filters{
   display: flex;
   gap: 10px;
@@ -458,7 +472,10 @@ h1{
   box-shadow: 0 10px 22px rgba(0,0,0,0.06);
 }
 
-/* Tags */
+
+/* =====================
+   TAGS
+===================== */
 .tags{
   display: flex;
   gap: 8px;
@@ -477,7 +494,10 @@ h1{
   border: 1px solid rgba(231,231,231,0.9);
 }
 
-/* Card bottom row: links left, CTA right */
+
+/* =====================
+   CARD ACTIONS
+===================== */
 .card-actions{
   display: flex;
   align-items: center;
@@ -486,7 +506,6 @@ h1{
   flex-wrap: wrap;
 }
 
-/* Small CTA button (theme match) */
 .btn{
   display: inline-flex;
   align-items: center;
@@ -518,8 +537,6 @@ h1{
 /* =====================
    BLOG PAGE POLISH
 ===================== */
-
-/* Blog hero: blended gradient like portfolio (no image required) */
 .blog-hero{
   background:
     radial-gradient(900px 420px at 15% 25%, rgba(59,130,246,0.40), transparent 55%),
@@ -556,16 +573,6 @@ h1{
   outline-offset: 3px;
 }
 
-/* Make posts feel more “card-like” */
-.post{
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-
-.post:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-}
-
 .post-actions{
   display: flex;
   align-items: center;
@@ -575,7 +582,6 @@ h1{
   margin-top: 10px;
 }
 
-/* Optional ghost button for disabled state */
 .btn-ghost{
   background: #fff;
   color: rgba(20, 60, 90, 0.75);
@@ -591,7 +597,10 @@ h1{
   filter: none;
 }
 
-/* ===== PORTFOLIO IMAGE GRID ===== */
+
+/* =====================
+   PORTFOLIO IMAGE GRID
+===================== */
 .portfolio-grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -614,6 +623,7 @@ h1{
 .portfolio-card:hover{
   transform: translateY(-6px);
   box-shadow: 0 18px 40px rgba(13, 22, 48, 0.18);
+  text-decoration: none;
 }
 
 .portfolio-card img{
@@ -634,7 +644,7 @@ h1{
   inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 1.25rem;
   background: linear-gradient(
     to top,
@@ -661,25 +671,31 @@ h1{
   font-size: 0.96rem;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.92);
+  max-width: 26ch;
 }
 
-.portfolio-btn{
-  margin-top: 1rem;
-}
-
-.portfolio-btn span{
-  display: inline-block;
-  padding: 0.55rem 1rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.26);
+/* GitHub badge appears on hover */
+.portfolio-github{
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  background: rgba(255,255,255,0.14);
   color: #fff;
-  font-size: 0.9rem;
-  font-weight: 600;
-  backdrop-filter: blur(3px);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .3s ease;
+  backdrop-filter: blur(4px);
 }
 
-/* optional category accents while keeping your main palette */
+.portfolio-card:hover .portfolio-github{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional category accents */
 .portfolio-card.analytics{
   box-shadow: 0 12px 30px rgba(29, 42, 80, 0.14);
 }
@@ -696,7 +712,39 @@ h1{
   box-shadow: 0 12px 30px rgba(29, 42, 80, 0.14);
 }
 
-/* mobile */
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 900px){
+  .about-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo img{
+    height: auto;
+  }
+
+  .about-hero{
+    padding: 22px 0;
+  }
+
+  .about-hero-lead{
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 800px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+
+  .menu{
+    gap: 12px;
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 640px){
   .portfolio-grid{
     grid-template-columns: 1fr;
@@ -718,37 +766,13 @@ h1{
 
   .portfolio-text p{
     font-size: 0.9rem;
+    max-width: none;
   }
-}
 
-
-.portfolio-card{
-  position: relative;
-  transition: transform .3s ease;
-}
-
-.portfolio-github{
-  position: absolute;
-  bottom: 18px;
-  right: 18px;
-  background: rgba(255,255,255,0.12);
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  color: white;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all .3s ease;
-  backdrop-filter: blur(4px);
-}
-
-/* Show on hover */
-.portfolio-card:hover .portfolio-github{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Card hover lift */
-.portfolio-card:hover{
-  transform: translateY(-6px);
+  .portfolio-github{
+    right: 14px;
+    bottom: 14px;
+    font-size: 12px;
+    padding: 7px 12px;
+  }
 }
