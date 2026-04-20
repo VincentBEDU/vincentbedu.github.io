@@ -226,7 +226,7 @@ h1{
 ===================== */
 .about-photo img{
   width: 100%;
-  height: 500px;
+  height: 450px;
   object-fit: cover;
   object-position: 50% 10%; /* ✅ keeps your face visible */
   display: block;
